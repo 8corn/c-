@@ -1,0 +1,48 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "clang++ - Build and debug active file",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "preLaunchTask": "clang++ build active file",
+      "setupCommands": [
+        {
+          "text": "-enable-pretty-printing",
+          "description": "Enable pretty printing",
+          "ignoreFailures": true
+        },
+        {
+          "text": "settings set target.x86-disassembly-flavor intel",
+          "description": "Set disassembly flavor to Intel",
+          "ignoreFailures": true
+        },
+        {
+          "text": "settings set target.language c++",
+          "description": "Set target language to C++",
+          "ignoreFailures": true
+        }
+      ],
+      "logging": {
+        "engineLogging": true,
+        "trace": true,
+        "traceResponse": true
+      }
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/kimjeong-gwon/Documents/vscode/.vscode/Home",
+      "program": "/Users/kimjeong-gwon/Documents/vscode/.vscode/Home/build/Debug/outDebug"
+    }
+  ]
+}
